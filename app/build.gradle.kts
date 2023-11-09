@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.cnit355_project"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.cnit355_project"
