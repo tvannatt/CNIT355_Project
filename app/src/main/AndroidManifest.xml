@@ -21,10 +21,6 @@
             android:exported = "false"
             android:windowSoftInputMode="adjustPan"/>
 
-        <activity android:name=".push_chest"
-            android:exported = "false"
-            android:windowSoftInputMode="adjustPan"
-            />
 
         <activity android:name=".push_shoulder"
             android:exported = "false"

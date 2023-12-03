@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".push_chest">
+    tools:context=".FragmentA1">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -152,35 +152,35 @@
         android:layout_gravity="bottom">
 
         <Button
+            android:id = "@+id/buttonNone1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="SELECT ALL"
-            android:onClick="onSelectAllClick"
             android:textSize="8sp"/>
 
         <Button
+            android:id = "@+id/buttonAll1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="DESELECT ALL"
-            android:onClick="onUnselectAllClick"
             android:textSize="6sp"/>
 
         <Button
+            android:id = "@+id/buttonCreate1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="CREATE"
-            android:onClick="onCreateClick"
             android:textSize="8sp"/>
 
         <Button
+            android:id = "@+id/buttonBack1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="BACK"
-            android:onClick="onBackClick"
             android:textSize="8sp"/>
 
     </LinearLayout>

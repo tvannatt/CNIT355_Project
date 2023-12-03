@@ -16,7 +16,7 @@ public class push_shoulder extends Equipment_MainActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.push_chest);
+        setContentView(R.layout.push_shoulder);
 
         // Replace these IDs with the actual IDs used in your XML layout
         ImageView imageView1 = findViewById(R.id.imageView1);
