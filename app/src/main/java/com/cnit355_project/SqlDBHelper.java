@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class SqlDBHelper extends SQLiteOpenHelper {
 
+
+    // Simple DB helper to allow universal access to the database.
+
     public SqlDBHelper(Context context)
     {
         super(context, "RecMate", null, 1);
@@ -18,7 +21,7 @@ public class SqlDBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("CREATE TABLE workoutplan (eName CHAR (20) PRIMARY KEY, nSets CHAR(2), nReps CHAR(2), wGroup CHAR(2));");
+        db.execSQL("CREATE TABLE IF NOT EXISTS workoutplan (eName CHAR (20) PRIMARY KEY, nSets CHAR(2), nReps CHAR(2), nGroup CHAR(2));");
 
     }
 
