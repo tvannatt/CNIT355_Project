@@ -117,7 +117,13 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
         // TODO: Replace the "create" button with a "remove" button since the database gets created automatically. Remove button will remove exercises from workoutplan.
         else if (v.getId() == R.id.buttonRemove)
         {
+            if (checkBox1.isChecked())
+            {
+                myHelper.deleteData("Bench Press");
+            }
+            //TODO: Repeat the above logic for the other 3 checkboxes.
 
+            Toast.makeText(getActivity(), "Removed selections from Workout Plan.", Toast.LENGTH_SHORT).show();
         }
 
         // Button to add select exercises to plan (workoutplan activity itself should allow further editing options).
