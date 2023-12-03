@@ -8,7 +8,6 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
 import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,15 +15,12 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ClubActivity extends AppCompatActivity {
 
     private ProgressBar progress;
-    WebView boilerLinkView;
-    Button home;
+    private WebView boilerLinkView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_club);
-
-        home = findViewById(R.id.button4);
 
         progress = findViewById(R.id.progressBar);
         progress.setIndeterminate(true);
@@ -55,7 +51,7 @@ public class ClubActivity extends AppCompatActivity {
 
     }
 
-    public void LoadLink()
+    private void LoadLink()
     {
         boilerLinkView = findViewById(R.id.webView);
         WebSettings webSettings = boilerLinkView.getSettings();
@@ -63,7 +59,6 @@ public class ClubActivity extends AppCompatActivity {
         webSettings.setDomStorageEnabled(true);
         boilerLinkView.setWebChromeClient(new WebChromeClient());
         boilerLinkView.loadUrl("https://boilerlink.purdue.edu/organizations?categories=1450&categories=1461");
-
     }
 
 
@@ -73,6 +68,12 @@ public class ClubActivity extends AppCompatActivity {
     {
         finish();
     }
+
+    public void onClickRefresh(View v)
+    {
+        boilerLinkView.reload();
+    }
+
 
 
 
