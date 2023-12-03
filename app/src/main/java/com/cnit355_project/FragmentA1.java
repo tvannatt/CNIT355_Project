@@ -63,7 +63,7 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
 
     TextView error;
     CheckBox checkBox1, checkBox2, checkBox3, checkBox4;
-    Button buttonBack, buttonCreate, buttonInsert;
+    Button buttonBack, buttonRemove, buttonInsert;
     View view;
     Cursor c;
     SqlDBHelper myHelper;
@@ -83,7 +83,7 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
         checkBox3 = view.findViewById(R.id.checkBox3);
         checkBox4 = view.findViewById(R.id.checkBox4);
         buttonBack = view.findViewById(R.id.buttonBack1);
-        buttonCreate = view.findViewById(R.id.buttonCreate1);
+        buttonRemove = view.findViewById(R.id.buttonRemove);
         buttonInsert = view.findViewById(R.id.buttonInsert);
         error = view.findViewById(R.id.textError);
 
@@ -95,7 +95,7 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
 
         buttonBack.setOnClickListener(this);
         buttonInsert.setOnClickListener(this);
-        buttonCreate.setOnClickListener(this);
+        buttonRemove.setOnClickListener(this);
 
 
 
@@ -115,7 +115,7 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
         }
 
         // TODO: Replace the "create" button with a "remove" button since the database gets created automatically. Remove button will remove exercises from workoutplan.
-        else if (v.getId() == R.id.buttonCreate1)
+        else if (v.getId() == R.id.buttonRemove)
         {
 
         }

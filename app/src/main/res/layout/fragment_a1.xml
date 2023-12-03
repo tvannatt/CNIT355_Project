@@ -161,11 +161,11 @@
             android:textSize="6sp"/>
 
         <Button
-            android:id = "@+id/buttonCreate1"
+            android:id = "@+id/buttonRemove"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="CREATE"
+            android:text="REMOVE FROM PLAN"
             android:textSize="8sp"/>
 
         <Button
