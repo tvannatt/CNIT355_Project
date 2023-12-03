@@ -55,6 +55,7 @@ public class MainEquip extends Fragment implements View.OnClickListener {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
 
     }
@@ -62,6 +63,13 @@ public class MainEquip extends Fragment implements View.OnClickListener {
 
     TextView textView1;
     TextView textView2;
+    TextView textView3;
+    TextView textView4;
+    TextView textView5;
+    TextView textView6;
+    TextView textView7;
+    TextView textView8;
+
     Button button;
 
    Fragment A1, A2, A3, B1, B2, B3, C1, D1;
@@ -75,9 +83,22 @@ public class MainEquip extends Fragment implements View.OnClickListener {
         // Accessing views from the layout
         textView1 = view.findViewById(R.id.TextView1);
         textView2 = view.findViewById(R.id.TextView2);
+        textView3 = view.findViewById(R.id.TextView3);
+        textView4 = view.findViewById(R.id.TextView4);
+        textView5 = view.findViewById(R.id.TextView5);
+        textView6 = view.findViewById(R.id.TextView6);
+        textView7 = view.findViewById(R.id.TextView7);
+        textView8 = view.findViewById(R.id.TextView8);
         button = view.findViewById(R.id.button3);
 
         textView1.setOnClickListener(this);
+        textView2.setOnClickListener(this);
+        textView3.setOnClickListener(this);
+        textView4.setOnClickListener(this);
+        textView5.setOnClickListener(this);
+        textView6.setOnClickListener(this);
+        textView7.setOnClickListener(this);
+        textView8.setOnClickListener(this);
         button.setOnClickListener(this);
 
 
@@ -96,10 +117,83 @@ public class MainEquip extends Fragment implements View.OnClickListener {
         else if (v.getId() == R.id.TextView1)
         {
             A1 = new FragmentA1();
+
+
             FragmentManager fm = getActivity().getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.mainfragmentview, A1);
             ft.addToBackStack(null).commit();
         }
+        else if (v.getId() == R.id.TextView2) {
+        // Open Fragment A2
+            A2 = new FragmentA2();
+
+
+            FragmentManager fm = getActivity().getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.mainfragmentview, A2);
+            ft.addToBackStack(null).commit();
+        }
+        else if (v.getId() == R.id.TextView3) {
+            // Open Fragment A3
+            A3 = new FragmentA3();
+
+
+            FragmentManager fm = getActivity().getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.mainfragmentview, A3);
+            ft.addToBackStack(null).commit();
+        }
+        else if (v.getId() == R.id.TextView4) {
+            // Open Fragment B1
+            B1 = new FragmentB1();
+
+
+            FragmentManager fm = getActivity().getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.mainfragmentview, B1);
+            ft.addToBackStack(null).commit();
+        }
+        else if (v.getId() == R.id.TextView5) {
+            // Open Fragment B1
+            B2 = new FragmentB2();
+
+
+            FragmentManager fm = getActivity().getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.mainfragmentview, B2);
+            ft.addToBackStack(null).commit();
+        }
+        else if (v.getId() == R.id.TextView6) {
+            // Open Fragment B3
+            B3 = new FragmentB3();
+
+
+            FragmentManager fm = getActivity().getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.mainfragmentview, B3);
+            ft.addToBackStack(null).commit();
+        }
+        else if (v.getId() == R.id.TextView7) {
+            // Open Fragment C1
+            C1 = new FragmentC1();
+
+
+            FragmentManager fm = getActivity().getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.mainfragmentview, C1);
+            ft.addToBackStack(null).commit();
+        }
+        else if (v.getId() == R.id.TextView8) {
+            // Open Fragment D1
+            D1 = new FragmentD1();
+
+
+            FragmentManager fm = getActivity().getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.mainfragmentview, D1);
+            ft.addToBackStack(null).commit();
+        }
+
     }
 }

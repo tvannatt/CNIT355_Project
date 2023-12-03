@@ -56,7 +56,7 @@
                     android:text="A1. Push - Chest"
                     android:id="@+id/TextView1"
                     android:textColor="@color/gold"
-                    android:textSize="18sp" />
+                    android:textSize="25sp" />
                 <!-- Exercise Equipment 2 -->
                 <TextView
                     android:layout_width="wrap_content"
@@ -65,15 +65,16 @@
                     android:text="A2. Push - Shoulder"
                     android:id="@+id/TextView2"
                     android:textColor="@color/gold"
-                    android:textSize="18sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
                     android:text="A3. Push - Triceps"
+                    android:id="@+id/TextView3"
                     android:textColor="@color/gold"
-                    android:textSize="18sp" />
+                    android:textSize="25sp" />
 
 
                 <TextView
@@ -81,40 +82,45 @@
                     android:layout_height="wrap_content"
                     android:padding="8dp"
                     android:text="B1. Pull - Back"
+                    android:id="@+id/TextView4"
                     android:textColor="@color/gold"
-                    android:textSize="18sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
                     android:text="B2. Pull - Bicep"
+                    android:id="@+id/TextView5"
                     android:textColor="@color/gold"
-                    android:textSize="18sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
                     android:textColor="@color/gold"
+                    android:id="@+id/TextView6"
                     android:text="B3. Pull - Forearms"
-                    android:textSize="18sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
                     android:text="C1. Legs"
+                    android:id="@+id/TextView7"
                     android:textColor="@color/gold"
-                    android:textSize="18sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
                     android:text="D1. Cardio"
+                    android:id="@+id/TextView8"
                     android:textColor="@color/gold"
-                    android:textSize="18sp" />
+                    android:textSize="25sp" />
 
 
             </LinearLayout>
