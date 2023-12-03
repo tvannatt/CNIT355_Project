@@ -1,6 +1,4 @@
 package com.cnit355_project;
-
-
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
@@ -73,6 +71,12 @@ public class ClubActivity extends AppCompatActivity {
     {
         boilerLinkView.reload();
     }
+
+    public void onClickReset (View v)
+    {
+        boilerLinkView.loadUrl("https://boilerlink.purdue.edu/organizations?categories=1450&categories=1461");
+    }
+
 
 
 
