@@ -61,6 +61,10 @@ public class MainEquip extends Fragment implements View.OnClickListener {
     }
 
 
+
+
+    
+
     TextView textView1;
     TextView textView2;
     TextView textView3;

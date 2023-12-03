@@ -85,6 +85,8 @@ public class FragmentA2 extends Fragment implements View.OnClickListener {
         checkBox4.setOnClickListener(this);
 
         buttonBack.setOnClickListener(this);
+        buttonAll.setOnClickListener(this);
+        buttonNone.setOnClickListener(this);
 
 
 

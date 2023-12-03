@@ -22,11 +22,6 @@
             android:windowSoftInputMode="adjustPan"/>
 
 
-        <activity android:name=".push_shoulder"
-            android:exported = "false"
-            android:windowSoftInputMode="adjustPan"
-            />
-
         <activity
             android:name=".ClubActivity"
             android:exported = "false"
