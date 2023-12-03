@@ -60,7 +60,7 @@ public class WorkoutPlanActivity extends AppCompatActivity {
                 strGroup += c.getString(3) + "\r\n";
             }
 
-            test1.setText("\t" + strName);
+            test1.setText(strName);
             test2.setText(strSets);
             test3.setText(strReps);
             test4.setText(strGroup);
