@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (v.getId() == R.id.button2)
         {
-            Intent mIntent = new Intent(this, EquipmentActivity.class);
+            Intent mIntent = new Intent(this, Equipment_MainActivity.class);
             startActivity(mIntent);
         }
 
