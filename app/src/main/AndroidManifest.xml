@@ -17,26 +17,33 @@
 
         <!-- Definition of new activities in manifest -->
 
-        <activity android:name=".Equipment_MainActivity" />
+        <activity android:name=".Equipment_MainActivity"
+            android:exported = "false"
+            android:windowSoftInputMode="adjustPan"/>
 
-        <activity android:name=".push_chest" />
+        <activity android:name=".push_chest"
+            android:exported = "false"
+            android:windowSoftInputMode="adjustPan"
+            />
 
-        <activity android:name=".push_shoulder" />
-
+        <activity android:name=".push_shoulder"
+            android:exported = "false"
+            android:windowSoftInputMode="adjustPan"
+            />
 
         <activity
             android:name=".ClubActivity"
             android:exported = "false"
             android:windowSoftInputMode="adjustPan"/>
-        <activity
-            android:name=".EquipmentActivity"
-            android:exported= "false"/>
+
         <activity
             android:name="WorkoutPlanActivity"
-            android:exported = "false"/>
+            android:exported = "false"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
