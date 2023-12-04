@@ -16,6 +16,7 @@ public class WorkoutPlanActivity extends AppCompatActivity {
     TextView test1, test2, test3, test4;
     SqlDBHelper myHelper;
     SQLiteDatabase db;
+    String Table_Name="workoutplan";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,23 +30,16 @@ public class WorkoutPlanActivity extends AppCompatActivity {
         test3 = findViewById(R.id.textTest3);
         test4 = findViewById(R.id.textTest4);
 
-
-
         onLoad();
 
     }
-
-
-
-
-
 
     public void onLoad()
     {
         try {
             db = myHelper.getReadableDatabase();
             Cursor c;
-            c = db.rawQuery("SELECT * FROM workoutplan", null);
+            c = db.rawQuery("SELECT * FROM "+ Table_Name, null);
 
             String strName = "Name" + "\r\n" + "--------" + "\r\n";
             String strSets = "Sets" + "\r\n" + "--------" + "\r\n";
@@ -68,14 +62,13 @@ public class WorkoutPlanActivity extends AppCompatActivity {
 
             c.close();
             db.close();
+            Toast.makeText(getApplicationContext(), "Query Made", Toast.LENGTH_SHORT).show();
+
         } catch (Exception ex)
         {
             ex.printStackTrace();
             Toast.makeText(this, "Database is empty or does not exist.", Toast.LENGTH_SHORT).show();
         }
     }
-
-
-
 
 }
