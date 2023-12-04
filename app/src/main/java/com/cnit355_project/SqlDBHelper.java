@@ -34,7 +34,7 @@ String table_name="workoutplan";
 
     }
 
-    public boolean insertData(String name, String sets, String reps, String group)
+    public void insertData(String name, String sets, String reps, String group)
     {
         SQLiteDatabase db = this.getReadableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -44,11 +44,10 @@ String table_name="workoutplan";
         contentValues.put("nGroup", group);
         db.insert("workoutplan", null, contentValues);
         db.close();
-        return true;
     }
 
 
-    public boolean updateData(String name, String sets, String reps)
+    public void updateData(String name, String sets, String reps)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -57,14 +56,13 @@ String table_name="workoutplan";
         db.update("workoutplan", cv, "eName = ?", new String[] {name});
         db.close();
         Log.i("DPHELP: update s: ", sets + "r " + reps);
-        return true;
     }
 
 
-    public Integer deleteData (String name)
+    public void deleteData (String name)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete("workoutplan", "eName = ?", new String[] {name});
+        db.delete("workoutplan", "eName = ?", new String[]{name});
     }
 
 

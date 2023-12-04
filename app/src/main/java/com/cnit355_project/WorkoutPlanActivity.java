@@ -12,7 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class WorkoutPlanActivity extends AppCompatActivity {
 
 
-    //TODO: Replace this entire activity. All that's here right now is something for me to test my changes to the database.
+    //TODO: I'm thinking of adding the ability to update the exercises from this activity as well, just to fill some of the space.
+    // I'm not really sure how to design this tbh.
 
     TextView test1, test2, test3, test4;
     SqlDBHelper myHelper;

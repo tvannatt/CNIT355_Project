@@ -1,4 +1,5 @@
 package com.cnit355_project;
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
@@ -50,6 +51,7 @@ public class ClubActivity extends AppCompatActivity {
 
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     private void LoadLink()
     {
         boilerLinkView = findViewById(R.id.webView);
