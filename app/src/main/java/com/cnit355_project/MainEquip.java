@@ -67,7 +67,7 @@ public class MainEquip extends Fragment implements View.OnClickListener {
                     Activity.MODE_PRIVATE,
                     null);
             databaseCreated = true;
-            Log.i("database is created.", " CReation"+ databaseCreated);
+            Log.i("database is created.", " Creation"+ databaseCreated);
         } catch(Exception ex) {
             ex.printStackTrace();
             Log.i("database is not created.","----------------------");
@@ -131,7 +131,7 @@ public class MainEquip extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Log.i("OnCLick Trggererd", "---+_++++=-----");
+        Log.i("OnCLick Triggered", "---+_++++=-----");
         if (v.getId() == R.id.button3)
         {
            getActivity().finish();

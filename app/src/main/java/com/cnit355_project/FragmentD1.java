@@ -38,6 +38,9 @@ public class FragmentD1 extends Fragment implements View.OnClickListener {
      * @param param2 Parameter 2.
      * @return A new instance of fragment FragmentD1.
      */
+
+
+
     // TODO: Rename and change types and number of parameters
     public static FragmentD1 newInstance(String param1, String param2) {
         FragmentD1 fragment = new FragmentD1();
