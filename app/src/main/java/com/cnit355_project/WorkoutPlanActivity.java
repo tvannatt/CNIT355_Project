@@ -3,6 +3,7 @@ package com.cnit355_project;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,9 +31,16 @@ public class WorkoutPlanActivity extends AppCompatActivity {
         test3 = findViewById(R.id.textTest3);
         test4 = findViewById(R.id.textTest4);
 
+
         onLoad();
 
     }
+
+    public void onWPClick(View v)
+    {
+        finish();
+    }
+
 
     public void onLoad()
     {
@@ -44,14 +52,14 @@ public class WorkoutPlanActivity extends AppCompatActivity {
             String strName = "Name" + "\r\n" + "--------" + "\r\n";
             String strSets = "Sets" + "\r\n" + "--------" + "\r\n";
             String strReps = "Reps" + "\r\n" + "--------" + "\r\n";
-            String strGroup = "Workout Group" + "\r\n" + "--------" + "\r\n";
+            String strGroup = "Group" + "\r\n" + "--------" + "\r\n";
 
             while (c.moveToNext())
             {
-                strName += c.getString(0) + "\r\n";
-                strSets += c.getString(1) + "\r\n";
-                strReps += c.getString(2) + "\r\n";
-                strGroup += c.getString(3) + "\r\n";
+                strName += c.getString(0) + "\r\n\n\n\n";
+                strSets += c.getString(1) + "\r\n\n\n\n\n";
+                strReps += c.getString(2) + "\r\n\n\n\n\n";
+                strGroup += c.getString(3) + "\r\n\n\n\n\n";
             }
 
             test1.setText(strName);

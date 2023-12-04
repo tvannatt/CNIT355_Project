@@ -7,6 +7,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -70,11 +71,13 @@ public class ClubActivity extends AppCompatActivity {
     public void onClickRefresh(View v)
     {
         boilerLinkView.reload();
+        Toast.makeText(this, "Refreshed!", Toast.LENGTH_SHORT).show();
     }
 
     public void onClickReset (View v)
     {
         boilerLinkView.loadUrl("https://boilerlink.purdue.edu/organizations?categories=1450&categories=1461");
+        Toast.makeText(this, "Returning to front page...", Toast.LENGTH_SHORT).show();
     }
 
 
