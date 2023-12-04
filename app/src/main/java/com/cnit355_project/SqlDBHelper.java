@@ -4,25 +4,27 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class SqlDBHelper extends SQLiteOpenHelper {
+    private static final int DATABASE_VERSION = 1;
 
 
     // Simple DB helper to allow universal access to the database.
 
     public SqlDBHelper(Context context)
     {
-        super(context, "RecMate", null, 1);
+        super(context, "RecMate", null, DATABASE_VERSION);
     }
-
+String table_name="workoutplan";
 
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("CREATE TABLE IF NOT EXISTS workoutplan (eName CHAR (20) PRIMARY KEY, nSets CHAR(2), nReps CHAR(2), nGroup CHAR(2));");
-
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ table_name +"(eName CHAR (20) PRIMARY KEY, nSets CHAR(2), nReps CHAR(2), nGroup CHAR(2));");
+        Log.i("Table Created", "DB Table");
     }
 
     @Override
@@ -41,6 +43,7 @@ public class SqlDBHelper extends SQLiteOpenHelper {
         contentValues.put ("nReps", reps);
         contentValues.put("nGroup", group);
         db.insert("workoutplan", null, contentValues);
+        db.close();
         return true;
     }
 
@@ -52,6 +55,7 @@ public class SqlDBHelper extends SQLiteOpenHelper {
         cv.put("nSets", sets);
         cv.put("nReps", reps);
         db.update("workoutplan", cv, "eName = ?", new String[] {name});
+        db.close();
         return true;
     }
 
