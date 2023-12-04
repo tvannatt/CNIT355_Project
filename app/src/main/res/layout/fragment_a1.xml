@@ -29,7 +29,6 @@
                     android:id="@+id/imageView1"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/bench_press"
                  />
 
                 <TextView
@@ -79,7 +78,6 @@
                     android:id="@+id/imageView2"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/cablechestfly"
                     />
 
                 <TextView
@@ -129,7 +127,6 @@
                     android:id="@+id/imageView3"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/chest_dip"
                      />
 
                 <TextView
@@ -177,7 +174,7 @@
                     android:id="@+id/imageView4"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/machine_chest_press"
+                    />
       />
 
                 <TextView

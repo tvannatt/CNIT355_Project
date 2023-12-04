@@ -1,10 +1,7 @@
 package com.cnit355_project;
 
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -75,7 +72,7 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
     Cursor c;
     SqlDBHelper myHelper;
     SQLiteDatabase db;
-    ImageView imageView1;
+    ImageView imageView1, imageView2, imageView3, imageView4;
 
     EditText et1_set;
     EditText et1_rep;
@@ -139,36 +136,19 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
         et4_set.setOnClickListener(this);
         buttonBack = (Button) view.findViewById(R.id.button);
         imageView1 = view.findViewById(R.id.imageView1);
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(getResources(), R.id.imageView1, options);
-        int imageHeight = options.outHeight;
-        int imageWidth = options.outWidth;
-        String imageType = options.outMimeType;
+        imageView2 = view.findViewById(R.id.imageView2);
+        imageView3 = view.findViewById(R.id.imageView3);
+        imageView4 = view.findViewById(R.id.imageView4);
+
+        Glide.with(getActivity()).load(R.drawable.bench_press).into(imageView1);
+        Glide.with(getActivity()).load(R.drawable.cablechestfly).into(imageView2);
+        Glide.with(getActivity()).load(R.drawable.machine_chest_press).into(imageView3);
+        Glide.with(getActivity()).load(R.drawable.chest_dip).into(imageView4);
+
         return view;
     }
-    public static int calculateInSampleSize(
-            BitmapFactory.Options options, int reqWidth, int reqHeight) {
-        // Raw height and width of image
-        final int height = options.outHeight;
-        final int width = options.outWidth;
-        int inSampleSize = 1;
 
-        if (height > reqHeight || width > reqWidth) {
 
-            final int halfHeight = height / 2;
-            final int halfWidth = width / 2;
-
-            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
-            // height and width larger than the requested height and width.
-            while ((halfHeight / inSampleSize) >= reqHeight
-                    && (halfWidth / inSampleSize) >= reqWidth) {
-                inSampleSize *= 2;
-            }
-        }
-
-        return inSampleSize;
-    }
 
     @Override
     public void onClick(View v) {
@@ -258,9 +238,8 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
                 c.close();
             }
 
-
-            Equipment_MainActivity activity = (Equipment_MainActivity) getActivity();
-            activity.onFragmentChanged(8);
+            // TODO: Uncomment if intentional
+          //  getActivity().getSupportFragmentManager().popBackStackImmediate();
             Toast.makeText(getActivity(), "Workout Plan Updated", Toast.LENGTH_SHORT).show();
 
         }
@@ -322,6 +301,5 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
 
 
 
-        // Back button to previous fragment
 
 

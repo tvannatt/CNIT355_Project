@@ -1,11 +1,6 @@
-ackage com.cnit355_project;
-
-import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
-
-
+package com.cnit355_project;
 
 import android.app.Activity;
-import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
