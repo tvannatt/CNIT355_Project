@@ -18,6 +18,7 @@ public class WorkoutPlanActivity extends AppCompatActivity {
     SqlDBHelper myHelper;
     SQLiteDatabase db;
     String Table_Name="workoutplan";
+    StringBuilder str1, str2, str3, str4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,8 @@ public class WorkoutPlanActivity extends AppCompatActivity {
             String strSets = "Sets" + "\r\n" + "--------" + "\r\n";
             String strReps = "Reps" + "\r\n" + "--------" + "\r\n";
             String strGroup = "Group" + "\r\n" + "--------" + "\r\n";
+
+
 
             while (c.moveToNext())
             {
