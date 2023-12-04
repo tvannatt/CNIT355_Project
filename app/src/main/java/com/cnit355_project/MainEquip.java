@@ -1,6 +1,14 @@
-package com.cnit355_project;
+ackage com.cnit355_project;
 
+import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
+
+
+
+import android.app.Activity;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +34,11 @@ public class MainEquip extends Fragment implements View.OnClickListener {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    SqlDBHelper helper;
+    SQLiteDatabase db;
+    String DATABASE_NAME="Workout_plan.db";
 
+    Boolean databaseCreated;
     public MainEquip() {
         // Required empty public constructor
     }
@@ -52,18 +64,30 @@ public class MainEquip extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        helper = new SqlDBHelper(getActivity());
+
+        try {
+            db = getActivity().openOrCreateDatabase(
+                    DATABASE_NAME,
+                    Activity.MODE_PRIVATE,
+                    null);
+            databaseCreated = true;
+            Log.i("database is created.", " CReation"+ databaseCreated);
+        } catch(Exception ex) {
+            ex.printStackTrace();
+            Log.i("database is not created.","----------------------");
+        }
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-
         }
-
     }
 
 
 
 
-    
+
+
 
     TextView textView1;
     TextView textView2;
@@ -112,7 +136,7 @@ public class MainEquip extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-
+        Log.i("OnCLick Trggererd", "---+_++++=-----");
         if (v.getId() == R.id.button3)
         {
            getActivity().finish();
@@ -121,7 +145,7 @@ public class MainEquip extends Fragment implements View.OnClickListener {
         else if (v.getId() == R.id.TextView1)
         {
             A1 = new FragmentA1();
-
+            Log.i("OnClick Fragment A"," A");
 
             FragmentManager fm = getActivity().getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
@@ -132,6 +156,7 @@ public class MainEquip extends Fragment implements View.OnClickListener {
         // Open Fragment A2
             A2 = new FragmentA2();
 
+            Log.i("OnClick Fragment A"," B");
 
             FragmentManager fm = getActivity().getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
@@ -159,7 +184,7 @@ public class MainEquip extends Fragment implements View.OnClickListener {
             ft.addToBackStack(null).commit();
         }
         else if (v.getId() == R.id.TextView5) {
-            // Open Fragment B1
+            // Open Fragment B2
             B2 = new FragmentB2();
 
 
