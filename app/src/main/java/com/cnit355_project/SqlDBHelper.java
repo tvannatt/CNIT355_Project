@@ -56,6 +56,7 @@ String table_name="workoutplan";
         cv.put("nReps", reps);
         db.update("workoutplan", cv, "eName = ?", new String[] {name});
         db.close();
+        Log.i("DPHELP: update s: ", sets + "r " + reps);
         return true;
     }
 
