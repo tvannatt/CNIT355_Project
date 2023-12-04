@@ -50,25 +50,30 @@ public class WorkoutPlanActivity extends AppCompatActivity {
             Cursor c;
             c = db.rawQuery("SELECT * FROM "+ Table_Name, null);
 
-            String strName = "Name" + "\r\n" + "--------" + "\r\n";
-            String strSets = "Sets" + "\r\n" + "--------" + "\r\n";
-            String strReps = "Reps" + "\r\n" + "--------" + "\r\n";
-            String strGroup = "Group" + "\r\n" + "--------" + "\r\n";
 
 
+            str1 = new StringBuilder(0);
+            str2 = new StringBuilder(0);
+            str3 = new StringBuilder(0);
+            str4 = new StringBuilder(0);
+
+            str1.append("Name" + "\r\n" + "--------" + "\r\n");
+            str2.append("Sets" + "\r\n" + "--------" + "\r\n");
+            str3.append("Reps" + "\r\n" + "--------" + "\r\n");
+            str4.append("Group" + "\r\n" + "--------" + "\r\n");
 
             while (c.moveToNext())
             {
-                strName += c.getString(0) + "\r\n\n\n\n";
-                strSets += c.getString(1) + "\r\n\n\n\n\n";
-                strReps += c.getString(2) + "\r\n\n\n\n\n";
-                strGroup += c.getString(3) + "\r\n\n\n\n\n";
+                str1.append(c.getString(0)).append("\r\n\n\n\n");
+                str2.append(c.getString(1)).append("\r\n\n\n\n\n");
+                str3.append(c.getString(2)).append("\r\n\n\n\n\n");
+                str4.append(c.getString(3)).append("\r\n\n\n\n\n");
             }
 
-            test1.setText(strName);
-            test2.setText(strSets);
-            test3.setText(strReps);
-            test4.setText(strGroup);
+            test1.setText(str1.toString());
+            test2.setText(str2.toString());
+            test3.setText(str3.toString());
+            test4.setText(str4.toString());
 
 
             c.close();

@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+
 
 import androidx.fragment.app.Fragment;
 
@@ -61,6 +63,7 @@ public class FragmentC1 extends Fragment implements View.OnClickListener {
     CheckBox checkBox1, checkBox2, checkBox3, checkBox4;
     Button buttonBack, buttonCreate, buttonAll, buttonNone;
     View view;
+    ImageView im1, im2, im3, im4;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
