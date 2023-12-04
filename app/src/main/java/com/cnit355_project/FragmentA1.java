@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -70,11 +71,20 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
 
     TextView error;
     CheckBox checkBox1, checkBox2, checkBox3, checkBox4;
-    Button buttonBack, buttonRemove, buttonInsert;
+    Button buttonBack, buttonRemove, buttonInsert, buttonUpdate;
     Cursor c;
     SqlDBHelper myHelper;
     SQLiteDatabase db;
     ImageView imageView1;
+
+    EditText et1_set;
+    EditText et1_rep;
+    EditText et2_set;
+    EditText et2_rep;
+    EditText et3_set;
+    EditText et3_rep;
+    EditText et4_set;
+    EditText et4_rep;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -92,6 +102,18 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
         buttonBack = view.findViewById(R.id.buttonBack1);
         buttonRemove = view.findViewById(R.id.buttonRemove);
         buttonInsert = view.findViewById(R.id.buttonInsert);
+        buttonUpdate  = view.findViewById(R.id.buttonUpdate);
+        et1_set= view.findViewById(R.id.editText);
+
+        et1_rep= view.findViewById(R.id.editText2);
+        et2_set= view.findViewById(R.id.editText3);
+        et2_rep= view.findViewById(R.id.editText4);
+
+        et3_set= view.findViewById(R.id.editText5);
+        et3_rep= view.findViewById(R.id.editText6);
+        et4_set=view.findViewById(R.id.editText7);
+        et4_rep=view.findViewById(R.id.editText8);
+
         error = view.findViewById(R.id.textError);
 
         // Set click listeners for the checkboxes
@@ -103,8 +125,18 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
         buttonBack.setOnClickListener(this);
         buttonInsert.setOnClickListener(this);
         buttonRemove.setOnClickListener(this);
+        buttonUpdate.setOnClickListener(this);
 
+        et1_rep.setOnClickListener(this);
+        et1_set.setOnClickListener(this);
 
+        et2_set.setOnClickListener(this);
+        et2_rep.setOnClickListener(this);
+        et3_rep.setOnClickListener(this);
+        et3_set.setOnClickListener(this);
+
+        et4_rep.setOnClickListener(this);
+        et4_set.setOnClickListener(this);
         buttonBack = (Button) view.findViewById(R.id.button);
         imageView1 = view.findViewById(R.id.imageView1);
         BitmapFactory.Options options = new BitmapFactory.Options();
@@ -186,7 +218,7 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
 
                     error.append("\t\t\nBench Press already added to Workout Plan. ");
                 } else
-                    myHelper.insertData("Bench Press", "3", "10", "A1");
+                    myHelper.insertData("Bench Press", et1_set.getText().toString(), et1_rep.getText().toString(), "A1");
                 Log.i("FragA1", "BenchPress inserted");
 
 
@@ -200,7 +232,7 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
 
                     error.append("\t\t\nCable Chest Fly already added to Workout Plan.");
                 } else
-                    myHelper.insertData("Cable Chest Fly", "3", "12", "A1");
+                    myHelper.insertData("Cable Chest Fly",  et2_set.getText().toString(), et2_rep.getText().toString(), "A1");
                 Log.i("FragA1", "Cable Chest Fly Inserted");
 
                 c.close();
@@ -210,7 +242,7 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
                     error.append("\t\t\nMachine Chest Press already added to Workout Plan.");
 
                 } else
-                    myHelper.insertData("Machine Chest Press", "3", "12", "A1");
+                    myHelper.insertData("Machine Chest Press", et3_set.getText().toString(), et3_rep.getText().toString(), "A1");
 
                 c.close();
             }
@@ -220,11 +252,12 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
                     Log.i("FragA1", "Chest Dip already added to Workout Plan");
 
                 } else
-                    myHelper.insertData("Chest Dip", "3", "12", "A1");
+                    myHelper.insertData("Chest Dip", et4_set.getText().toString(), et4_rep.getText().toString(), "A1");
                 Log.i("FragA1", "Chest Dip inserted");
 
                 c.close();
             }
+
 
             Equipment_MainActivity activity = (Equipment_MainActivity) getActivity();
             activity.onFragmentChanged(8);
@@ -232,8 +265,44 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
 
         }
 
-    }
+        //OnUpdate
+        else if (v.getId() == R.id.buttonUpdate) {
+        }
 
+        if (checkBox1.isChecked()) {
+
+            if (checkIfAlreadyAdded("Bench Press")) {
+                if (et1_set.getText() != null || et1_rep.getText() != null) {
+                    myHelper.updateData("Bench Press", et1_set.getText().toString(), et1_rep.getText().toString());
+                }
+            }
+        }
+        else if (checkBox2.isChecked()) {
+
+            if (checkIfAlreadyAdded("Cable Chest Fly")) {
+                if (et2_set.getText() != null || et2_rep.getText() != null) {
+                    myHelper.updateData("Cable Chest Fly",  et2_set.getText().toString(), et2_rep.getText().toString());
+                }
+
+            }
+        } else if (checkBox3.isChecked()) {
+
+            if (checkIfAlreadyAdded("Machine Chest Press")) {
+                if (et3_set.getText() != null || et3_rep.getText() != null) {
+                    myHelper.updateData("Machine Chest Press",  et3_set.getText().toString(), et3_rep.getText().toString());
+                }
+            }
+        }
+        else if (checkBox4.isChecked()) {
+
+            if (checkIfAlreadyAdded("Chest Dip")) {
+                if (et4_set.getText() != null || et4_rep.getText() != null) {
+                    myHelper.updateData("Chest Dip",  et4_set.getText().toString(), et4_rep.getText().toString());
+                }
+            }}
+
+
+    }
 
     // METHOD TO CHECK IF ITEM ALREADY ADDED
 
@@ -248,3 +317,11 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
         }
     }
 }
+
+
+
+
+
+        // Back button to previous fragment
+
+
