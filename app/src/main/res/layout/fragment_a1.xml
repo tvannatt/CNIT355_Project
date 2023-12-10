@@ -84,7 +84,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cable Chest Fly"
-                    android:textSize="13sp"                    android:padding="7dp"
+                    android:textSize="13sp"
+                    android:padding="7dp"
                     android:id="@+id/TextView2"
                     android:textColor="@color/black"
               />
@@ -175,7 +176,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     />
-      />
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -253,6 +254,13 @@
             android:layout_weight="1"
             android:text="BACK"
             android:onClick="bttonBack"
+            android:textSize="8sp"/>
+        <Button
+            android:id = "@+id/buttonWorkoutPlan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Workout Plan"
             android:textSize="8sp"/>
 
     </LinearLayout>
