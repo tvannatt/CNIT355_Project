@@ -66,7 +66,7 @@ public class FragmentB2 extends Fragment implements View.OnClickListener {
         buttonInsert = view.findViewById(R.id.buttonInsert);
         buttonWorkoutPlan=view.findViewById(R.id.buttonWorkoutPlan);
         buttonUpdate  = view.findViewById(R.id.buttonUpdate);
-        et1_set= view.findViewById(R.id.editText1);
+        et1_set= view.findViewById(R.id.editText);
 
         et1_rep= view.findViewById(R.id.editText2);
         et2_set= view.findViewById(R.id.editText3);
@@ -210,7 +210,7 @@ public class FragmentB2 extends Fragment implements View.OnClickListener {
                     }
                 }
             }
-            else if (checkBox2.isChecked()) {
+            if (checkBox2.isChecked()) {
 
                 if (checkIfAlreadyAdded("Concentration Curl")) {
                     if (et2_set.getText() != null || et2_rep.getText() != null) {
@@ -218,7 +218,8 @@ public class FragmentB2 extends Fragment implements View.OnClickListener {
                     }
 
                 }
-            } else if (checkBox3.isChecked()) {
+            }
+            if (checkBox3.isChecked()) {
 
                 if (checkIfAlreadyAdded("Incline Curl")) {
                     if (et3_set.getText() != null || et3_rep.getText() != null) {
@@ -226,7 +227,7 @@ public class FragmentB2 extends Fragment implements View.OnClickListener {
                     }
                 }
             }
-            else if (checkBox4.isChecked()) {
+            if (checkBox4.isChecked()) {
 
                 if (checkIfAlreadyAdded("Spider Curl")) {
                     if (et4_set.getText() != null || et4_rep.getText() != null) {

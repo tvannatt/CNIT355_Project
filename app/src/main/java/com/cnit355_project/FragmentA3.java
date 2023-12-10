@@ -204,7 +204,7 @@ public class FragmentA3 extends Fragment implements View.OnClickListener {
                     }
                 }
             }
-            else if (checkBox2.isChecked()) {
+            if (checkBox2.isChecked()) {
 
                 if (checkIfAlreadyAdded("Tricep Pull")) {
                     if (et2_set.getText() != null || et2_rep.getText() != null) {
@@ -212,7 +212,8 @@ public class FragmentA3 extends Fragment implements View.OnClickListener {
                     }
 
                 }
-            } else if (checkBox3.isChecked()) {
+            }
+            if (checkBox3.isChecked()) {
 
                 if (checkIfAlreadyAdded("Tricep Dip")) {
                     if (et3_set.getText() != null || et3_rep.getText() != null) {
@@ -220,7 +221,7 @@ public class FragmentA3 extends Fragment implements View.OnClickListener {
                     }
                 }
             }
-            else if (checkBox4.isChecked()) {
+            if (checkBox4.isChecked()) {
 
                 if (checkIfAlreadyAdded("Overhead Extension")) {
                     if (et4_set.getText() != null || et4_rep.getText() != null) {

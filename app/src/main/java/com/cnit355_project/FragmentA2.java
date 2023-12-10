@@ -210,7 +210,7 @@ public class FragmentA2 extends Fragment implements View.OnClickListener {
                     }
                 }
             }
-            else if (checkBox2.isChecked()) {
+            if (checkBox2.isChecked()) {
 
                 if (checkIfAlreadyAdded("Shoulder Press")) {
                     if (et2_set.getText() != null || et2_rep.getText() != null) {
@@ -218,7 +218,8 @@ public class FragmentA2 extends Fragment implements View.OnClickListener {
                     }
 
                 }
-            } else if (checkBox3.isChecked()) {
+            }
+            if (checkBox3.isChecked()) {
 
                 if (checkIfAlreadyAdded("Shoulder Dip")) {
                     if (et3_set.getText() != null || et3_rep.getText() != null) {
@@ -226,7 +227,7 @@ public class FragmentA2 extends Fragment implements View.OnClickListener {
                     }
                 }
             }
-            else if (checkBox4.isChecked()) {
+            if (checkBox4.isChecked()) {
 
                 if (checkIfAlreadyAdded("Lateral Raises")) {
                     if (et4_set.getText() != null || et4_rep.getText() != null) {

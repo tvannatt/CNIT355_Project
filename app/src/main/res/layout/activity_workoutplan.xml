@@ -31,7 +31,8 @@
                 android:layout_height="match_parent"
                 android:padding="8dp"
                 android:textColor="@color/gold"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                android:hint="Your workout plan will populate here when added to. "/>
 
         </LinearLayout>
     </ScrollView>

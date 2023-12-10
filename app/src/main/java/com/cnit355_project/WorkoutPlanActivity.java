@@ -48,6 +48,8 @@ public class WorkoutPlanActivity extends AppCompatActivity {
 
     private void clearScrollView() {
         test1.setText("");
+        db = myHelper.getWritableDatabase();
+        db.execSQL("DELETE FROM workoutplan");
     }
 
     public void onEquipClick(View v) {
