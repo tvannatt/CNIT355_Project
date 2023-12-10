@@ -29,23 +29,42 @@
                     android:id="@+id/imageView1"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/bench_press" />
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Bench Press"
+                    android:text="Lat Pull Down"
                     android:id="@+id/TextView1"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <CheckBox
                     android:id="@+id/checkBox1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="75dp"
+                    android:layout_height="48dp"
                     android:layout_marginStart="8dp"
+
                     android:text="Select" />
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:layout_weight="1"
+
+                    android:hint="Sets" />
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:hint="Reps" />
             </LinearLayout>
 
             <!-- ImageView 2 -->
@@ -59,23 +78,42 @@
                     android:id="@+id/imageView2"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/cablechestfly" />
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Cable Chest Fly"
+                    android:text="Weighted Pull Up"
+                    android:textSize="13sp"
+                    android:padding="7dp"
                     android:id="@+id/TextView2"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    />
 
                 <CheckBox
                     android:id="@+id/checkBox2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="75dp"
+                    android:layout_height="48dp"
                     android:layout_marginStart="8dp"
                     android:text="Select" />
+
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="Sets"
+
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/editText4"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:hint="Reps"
+                    android:textSize="16dp" />
             </LinearLayout>
 
 
@@ -90,53 +128,88 @@
                     android:id="@+id/imageView3"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/chest_dip" />
+                    />
 
                 <TextView
+                    android:id="@+id/TextView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Chest Dip"
-                    android:id="@+id/TextView3"
+                    android:padding="7dp"
+                    android:text="Smith Back Squat"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="13sp" />
 
                 <CheckBox
                     android:id="@+id/checkBox3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_width="75dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="2dp"
                     android:text="Select" />
+                <EditText
+                    android:id="@+id/editText5"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:layout_weight="1"
+
+                    android:hint="Sets" />
+
+                <EditText
+                    android:id="@+id/editText6"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:hint="Reps" />
             </LinearLayout>
 
-            <!-- ImageView 4 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="8dp">
+                <!-- ImageView 4 -->
 
                 <ImageView
                     android:id="@+id/imageView4"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/machine_chest_press" />
+                    />
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Chest Dip"
+                    android:text="Back Extension"
                     android:id="@+id/TextView4"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <CheckBox
                     android:id="@+id/checkBox4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="75dp"
+                    android:layout_height="48dp"
                     android:layout_marginStart="8dp"
                     android:text="Select" />
+                <EditText
+                    android:id="@+id/editText7"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:layout_weight="1"
+
+                    android:hint="Sets" />
+
+                <EditText
+                    android:id="@+id/editText8"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:hint="Reps" />
             </LinearLayout>
 
 
@@ -151,38 +224,62 @@
         android:orientation="horizontal"
         android:layout_gravity="bottom">
 
-        <Button
-            android:id = "@+id/buttonNone1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="SELECT ALL"
-            android:textSize="8sp"/>
 
         <Button
-            android:id = "@+id/buttonAll1"
+            android:id = "@+id/buttonInsert"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="DESELECT ALL"
+            android:text="ADD TO PLAN"
             android:textSize="6sp"/>
 
         <Button
-            android:id = "@+id/buttonCreate1"
+            android:id = "@+id/buttonRemove"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="CREATE"
+            android:text="REMOVE FROM PLAN"
             android:textSize="8sp"/>
-
+        <Button
+            android:id = "@+id/buttonUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Update"
+            android:textSize="8sp"/>
         <Button
             android:id = "@+id/buttonBack1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="BACK"
+            android:onClick="bttonBack"
+            android:textSize="8sp"/>
+        <Button
+            android:id = "@+id/buttonWorkoutPlan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Workout Plan"
             android:textSize="8sp"/>
 
     </LinearLayout>
+
+    <!-- This scroll view contains the messages telling users if exercises have already been added. -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

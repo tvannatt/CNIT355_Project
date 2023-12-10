@@ -68,7 +68,7 @@
         android:layout_marginBottom="31dp"
         android:background="@drawable/border_format"
         android:onClick="onWPClick"
-        android:text="BACK"
+        android:text="Clear"
         android:textColor="@color/gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

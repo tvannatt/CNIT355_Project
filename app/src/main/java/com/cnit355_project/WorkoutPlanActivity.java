@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ScrollView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -40,9 +41,17 @@ public class WorkoutPlanActivity extends AppCompatActivity {
 
     }
 
-    public void onWPClick(View v)
-    {
-        finish();
+    public void onWPClick(View v) {
+        clearScrollView();
+        Toast.makeText(this, "Cleared!", Toast.LENGTH_SHORT).show();
+    }
+
+    private void clearScrollView() {
+        ScrollView scrollView = findViewById(R.id.scrollView2);
+        test1.setText("");
+        test2.setText("");
+        test3.setText("");
+        test4.setText("");
     }
 
     public void onEquipClick(View v) {
