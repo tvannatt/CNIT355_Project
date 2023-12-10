@@ -114,36 +114,34 @@ public class FragmentC1 extends Fragment implements View.OnClickListener {
             getActivity().getSupportFragmentManager().popBackStackImmediate();
         }
 
-        // TODO: Replace the "create" button with a "remove" button since the database gets created automatically. Remove button will remove exercises from workoutplan.
-        else if (v.getId() == R.id.buttonRemove) {
+         else if (v.getId() == R.id.buttonRemove) {
             if (checkBox1.isChecked()) {
                 myHelper.deleteData("Barbell Squat Box");
-                Log.i("FragA2", "Barbell Squat Box Deleted");
+                Log.i("FragC1", "Barbell Squat Box Deleted");
             } else {
-                Log.i("FragA2", "Barbell Squat Box Doesn't Exist");
+                Log.i("FragC1", "Barbell Squat Box Doesn't Exist");
 
             }
             if (checkBox2.isChecked()) {
                 myHelper.deleteData("Exercise Ball Leq Curl");
-                Log.i("FragA2", "Exercise Ball Leq Curl Deleted");
+                Log.i("FragC1", "Exercise Ball Leq Curl Deleted");
 
             } else {
-                Log.i("FragA2", "Exercise Ball Leq Curl Doesn't Exist");
+                Log.i("FragC1", "Exercise Ball Leq Curl Doesn't Exist");
 
             }
             if (checkBox3.isChecked()) {
                 myHelper.deleteData("Single Leg Press");
             } else {
-                Log.i("FragA2", "Single Leg Press Doesn't Exist");
+                Log.i("FragC1", "Single Leg Press Doesn't Exist");
 
             }
             if (checkBox4.isChecked()) {
                 myHelper.deleteData("Tire Flip");
             } else {
-                Log.i("FragA2", "Tire Flip Doesn't Exist");
+                Log.i("FragC1", "Tire Flip Doesn't Exist");
 
             }
-            //TODO: Repeat the above logic for the other 3 checkboxes.
 
             Toast.makeText(getActivity(), "Removed selections from Workout Plan.", Toast.LENGTH_SHORT).show();
         }
@@ -154,22 +152,22 @@ public class FragmentC1 extends Fragment implements View.OnClickListener {
             if (checkBox1.isChecked()) {
 
                 if (checkIfAlreadyAdded("Barbell Squat Box")) {
-                    Log.i("FragA2", "Barbell Squat Box Already Added");
+                    Log.i("FragC1", "Barbell Squat Box Already Added");
 
                     error.append("\t\t\nBarbell Squat Box already added to Workout Plan. ");
                 } else
-                    myHelper.insertData("Barbell Squat Box", et1_set.getText().toString(), et1_rep.getText().toString(), "A2");
-                Log.i("FragA2", "Barbell Squat Box inserted");
+                    myHelper.insertData("Barbell Squat Box", et1_set.getText().toString(), et1_rep.getText().toString(), "C1");
+                Log.i("FragC1", "Barbell Squat Box inserted");
                 c.close();
             }
             if (checkBox2.isChecked()) {
                 if (checkIfAlreadyAdded("Exercise Ball Leq Curl")) {
-                    Log.i("FragA2", "Exercise Ball Leq Curl Already Added");
+                    Log.i("FragC1", "Exercise Ball Leq Curl Already Added");
 
                     error.append("\t\t\nExercise Ball Leq Curl already added to Workout Plan. ");
                 } else {
-                    myHelper.insertData("Exercise Ball Leq Curl", et2_set.getText().toString(), et2_rep.getText().toString(), "A2");
-                    Log.i("FragA2", "Exercise Ball Leq Curl inserted");
+                    myHelper.insertData("Exercise Ball Leq Curl", et2_set.getText().toString(), et2_rep.getText().toString(), "C1");
+                    Log.i("FragC1", "Exercise Ball Leq Curl inserted");
 
                 }
                 c.close();
@@ -178,12 +176,12 @@ public class FragmentC1 extends Fragment implements View.OnClickListener {
             if (checkBox3.isChecked()) {
 
                 if (checkIfAlreadyAdded("Single Leg Press")) {
-                    Log.i("FragA2", "Single Leg Press Already Added");
+                    Log.i("FragC1", "Single Leg Press Already Added");
 
                     error.append("\t\t\nSingle Leg Press already added to Workout Plan. ");
                 } else {
-                    myHelper.insertData("Single Leg Press", et3_set.getText().toString(), et3_rep.getText().toString(), "A2");
-                    Log.i("FragA2", "Single Leg Press inserted");
+                    myHelper.insertData("Single Leg Press", et3_set.getText().toString(), et3_rep.getText().toString(), "C1");
+                    Log.i("FragC1", "Single Leg Press inserted");
 
                 }
                 c.close();
@@ -192,12 +190,12 @@ public class FragmentC1 extends Fragment implements View.OnClickListener {
             if (checkBox4.isChecked()) {
 
                 if (checkIfAlreadyAdded("Tire Flip")) {
-                    Log.i("FragA2", "Tire Flip Already Added");
+                    Log.i("FragC1", "Tire Flip Already Added");
 
                     error.append("\t\t\nTire Flip already added to Workout Plan. ");
                 } else {
-                    myHelper.insertData("Tire Flip", et4_set.getText().toString(), et4_rep.getText().toString(), "A2");
-                    Log.i("FragA2", "Tire Flip");
+                    myHelper.insertData("Tire Flip", et4_set.getText().toString(), et4_rep.getText().toString(), "C1");
+                    Log.i("FragC1", "Tire Flip");
 
                 }
                 c.close();
