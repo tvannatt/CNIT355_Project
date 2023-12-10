@@ -9,7 +9,6 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-
 import androidx.fragment.app.Fragment;
 
 /**
