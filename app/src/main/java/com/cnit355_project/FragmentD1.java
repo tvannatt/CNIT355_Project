@@ -19,9 +19,6 @@ public class FragmentD1 extends Fragment implements View.OnClickListener {
     }
 
 
-
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,9 +41,7 @@ public class FragmentD1 extends Fragment implements View.OnClickListener {
         checkBox3 = view.findViewById(R.id.checkBox3);
         checkBox4 = view.findViewById(R.id.checkBox4);
         buttonBack = view.findViewById(R.id.buttonBack1);
-        buttonCreate = view.findViewById(R.id.buttonCreate1);
-        buttonAll = view.findViewById(R.id.buttonAll1);
-        buttonNone = view.findViewById(R.id.buttonNone1);
+
 
         // Set click listeners for the checkboxes
         checkBox1.setOnClickListener(this);
@@ -95,46 +90,6 @@ public class FragmentD1 extends Fragment implements View.OnClickListener {
         else if (v.getId() == R.id.buttonBack1)
         {
             getActivity().getSupportFragmentManager().popBackStackImmediate();
-        }
-        else if (v.getId() == R.id.buttonCreate1)
-        {
-
-        }
-        else if (v.getId() == R.id.buttonNone1)
-        {
-            LinearLayout imageContainer = view.findViewById(R.id.imageContainer);
-
-            for (int i = 0; i < imageContainer.getChildCount(); i++) {
-                View child = imageContainer.getChildAt(i);
-                if (child instanceof LinearLayout) {
-                    LinearLayout linearLayout = (LinearLayout) child;
-                    for (int j = 0; j < linearLayout.getChildCount(); j++) {
-                        View innerChild = linearLayout.getChildAt(j);
-                        if (innerChild instanceof CheckBox) {
-                            CheckBox checkBox = (CheckBox) innerChild;
-                            checkBox.setChecked(false);
-                        }
-                    }
-                }
-            }
-        }
-        else if (v.getId() == R.id.buttonAll1)
-        {
-            LinearLayout imageContainer = view.findViewById(R.id.imageContainer);
-
-            for (int i = 0; i < imageContainer.getChildCount(); i++) {
-                View child = imageContainer.getChildAt(i);
-                if (child instanceof LinearLayout) {
-                    LinearLayout linearLayout = (LinearLayout) child;
-                    for (int j = 0; j < linearLayout.getChildCount(); j++) {
-                        View innerChild = linearLayout.getChildAt(j);
-                        if (innerChild instanceof CheckBox) {
-                            CheckBox checkBox = (CheckBox) innerChild;
-                            checkBox.setChecked(true);
-                        }
-                    }
-                }
-            }
         }
 
     }

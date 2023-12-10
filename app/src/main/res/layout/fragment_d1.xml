@@ -152,43 +152,60 @@
         android:layout_gravity="bottom">
 
         <Button
-            android:id = "@+id/buttonNone1"
+            android:id = "@+id/buttonInsert"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="SELECT ALL"
-            android:textSize="8sp"/>
-
-        <Button
-            android:id = "@+id/buttonAll1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="DESELECT ALL"
+            android:text="ADD TO PLAN"
             android:textSize="6sp"/>
 
         <Button
-            android:id = "@+id/buttonCreate1"
+            android:id = "@+id/buttonRemove"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="CREATE"
+            android:text="REMOVE FROM PLAN"
             android:textSize="8sp"/>
-
+        <Button
+            android:id = "@+id/buttonUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Update"
+            android:textSize="8sp"/>
         <Button
             android:id = "@+id/buttonBack1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="BACK"
+            android:onClick="bttonBack"
+            android:textSize="8sp"/>
+        <Button
+            android:id = "@+id/buttonWorkoutPlan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Workout Plan"
             android:textSize="8sp"/>
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textError"
+    <!-- This scroll view contains the messages telling users if exercises have already been added. -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

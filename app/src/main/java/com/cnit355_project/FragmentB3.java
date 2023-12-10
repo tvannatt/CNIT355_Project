@@ -67,7 +67,7 @@ public class FragmentB3 extends Fragment implements View.OnClickListener {
         buttonInsert = view.findViewById(R.id.buttonInsert);
         buttonWorkoutPlan=view.findViewById(R.id.buttonWorkoutPlan);
         buttonUpdate  = view.findViewById(R.id.buttonUpdate);
-        et1_set= view.findViewById(R.id.editText);
+        et1_set= view.findViewById(R.id.editText1);
 
         et1_rep= view.findViewById(R.id.editText2);
         et2_set= view.findViewById(R.id.editText3);
@@ -164,7 +164,7 @@ public class FragmentB3 extends Fragment implements View.OnClickListener {
                 Log.i("FragB3", "Rickshaw Carry inserted");
                 c.close();
             }
-            else if (checkBox2.isChecked()) {
+            if (checkBox2.isChecked()) {
                 if (checkIfAlreadyAdded("Wrist Curl Up")) {
                     Log.i("FragB3", "Wrist Curl Up Already Added");
 
@@ -176,7 +176,7 @@ public class FragmentB3 extends Fragment implements View.OnClickListener {
                 }
             }
 
-            else if (checkBox3.isChecked()) {
+            if (checkBox3.isChecked()) {
 
                 if (checkIfAlreadyAdded("Wrist Roller")) {
                     Log.i("FragB3", "Wrist Roller Already Added");
@@ -189,7 +189,7 @@ public class FragmentB3 extends Fragment implements View.OnClickListener {
                 }
 
             }
-            else if (checkBox4.isChecked()) {
+            if (checkBox4.isChecked()) {
 
                 if (checkIfAlreadyAdded("Straight Bar Wrist Roll Up")) {
                     Log.i("FragB3", "Straight Bar Wrist Roll Up Already Added");

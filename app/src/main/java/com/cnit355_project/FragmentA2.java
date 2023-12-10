@@ -62,7 +62,7 @@ public class FragmentA2 extends Fragment implements View.OnClickListener {
         buttonInsert = view.findViewById(R.id.buttonInsert);
         buttonWorkoutPlan=view.findViewById(R.id.buttonWorkoutPlan);
         buttonUpdate  = view.findViewById(R.id.buttonUpdate);
-        et1_set= view.findViewById(R.id.editText);
+        et1_set= view.findViewById(R.id.editText1);
 
         et1_rep= view.findViewById(R.id.editText2);
         et2_set= view.findViewById(R.id.editText3);
@@ -159,7 +159,7 @@ public class FragmentA2 extends Fragment implements View.OnClickListener {
                 Log.i("FragA2", "BenchPress inserted");
                 c.close();
             }
-            else if (checkBox2.isChecked()) {
+            if (checkBox2.isChecked()) {
                 if (checkIfAlreadyAdded("Shoulder Press")) {
                     Log.i("FragA2", "Shoulder Press Already Added");
 
@@ -167,11 +167,12 @@ public class FragmentA2 extends Fragment implements View.OnClickListener {
                 } else {
                     myHelper.insertData("Shoulder Press", et2_set.getText().toString(), et2_rep.getText().toString(), "A2");
                     Log.i("FragA2", "Shoulder Press inserted");
-                    c.close();
+
                 }
+                c.close();
             }
 
-            else if (checkBox3.isChecked()) {
+            if (checkBox3.isChecked()) {
 
                 if (checkIfAlreadyAdded("Shoulder Dip")) {
                     Log.i("FragA2", "Shoulder Dip Already Added");
@@ -180,11 +181,12 @@ public class FragmentA2 extends Fragment implements View.OnClickListener {
                 } else {
                     myHelper.insertData("Shoulder Dip", et3_set.getText().toString(), et3_rep.getText().toString(), "A2");
                     Log.i("FragA2", "Shoulder Dip inserted");
-                    c.close();
+
                 }
+                c.close();
 
             }
-            else if (checkBox4.isChecked()) {
+            if (checkBox4.isChecked()) {
 
                 if (checkIfAlreadyAdded("Lateral Raises")) {
                     Log.i("FragA2", "Lateral Raises Already Added");
@@ -193,8 +195,9 @@ public class FragmentA2 extends Fragment implements View.OnClickListener {
                 } else {
                     myHelper.insertData("Lateral Raises", et4_set.getText().toString(), et4_rep.getText().toString(), "A2");
                     Log.i("FragA2", "Lateral Raises");
-                    c.close();
+
                 }
+                c.close();
             }
         }
         //OnUpdate
