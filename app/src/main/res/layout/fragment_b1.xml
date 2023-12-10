@@ -240,13 +240,14 @@
             android:layout_weight="1"
             android:text="REMOVE FROM PLAN"
             android:textSize="8sp"/>
+
         <Button
-            android:id = "@+id/buttonUpdate"
+            android:id="@+id/buttonUpdate"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Update"
-            android:textSize="8sp"/>
+            android:textSize="8sp" />
         <Button
             android:id = "@+id/buttonBack1"
             android:layout_width="0dp"
@@ -265,21 +266,11 @@
 
     </LinearLayout>
 
-    <!-- This scroll view contains the messages telling users if exercises have already been added. -->
-    <ScrollView
+    <TextView
+        android:id="@+id/textError"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/textError"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-    </ScrollView>
 
 </LinearLayout>
