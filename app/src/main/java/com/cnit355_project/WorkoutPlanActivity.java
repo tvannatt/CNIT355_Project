@@ -18,11 +18,12 @@ public class WorkoutPlanActivity extends AppCompatActivity {
     //TODO: I'm thinking of adding the ability to update the exercises from this activity as well, just to fill some of the space.
     // I'm not really sure how to design this tbh.
 
-    TextView test1, test2, test3, test4;
+    TextView test1;
     SqlDBHelper myHelper;
     SQLiteDatabase db;
     String Table_Name="workoutplan";
-    StringBuilder str1, str2, str3, str4;
+    ScrollView sc1;
+    StringBuilder str1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +33,8 @@ public class WorkoutPlanActivity extends AppCompatActivity {
         myHelper = new SqlDBHelper(this);
 
         test1 = findViewById(R.id.textTest);
-        test2 = findViewById(R.id.textTest2);
-        test3 = findViewById(R.id.textTest3);
-        test4 = findViewById(R.id.textTest4);
+        sc1 = findViewById(R.id.scrollView2);
+
 
 
         onLoad();
@@ -47,11 +47,7 @@ public class WorkoutPlanActivity extends AppCompatActivity {
     }
 
     private void clearScrollView() {
-        ScrollView scrollView = findViewById(R.id.scrollView2);
         test1.setText("");
-        test2.setText("");
-        test3.setText("");
-        test4.setText("");
     }
 
     public void onEquipClick(View v) {
@@ -72,29 +68,23 @@ public class WorkoutPlanActivity extends AppCompatActivity {
             c = db.rawQuery("SELECT * FROM "+ Table_Name, null);
 
 
-
             str1 = new StringBuilder(0);
-            str2 = new StringBuilder(0);
-            str3 = new StringBuilder(0);
-            str4 = new StringBuilder(0);
-
-            str1.append("Name" + "\r\n" + "--------" + "\r\n");
-            str2.append("Sets" + "\r\n" + "--------" + "\r\n");
-            str3.append("Reps" + "\r\n" + "--------" + "\r\n");
-            str4.append("Group" + "\r\n" + "--------" + "\r\n");
 
             while (c.moveToNext())
             {
-                str1.append(c.getString(0)).append("\r\n\n\n\n");
-                str2.append(c.getString(1)).append("\r\n\n\n\n\n");
-                str3.append(c.getString(2)).append("\r\n\n\n\n\n");
-                str4.append(c.getString(3)).append("\r\n\n\n\n\n");
+
+                str1.append("\n\n\nExercise Name:  ");
+                str1.append(c.getString(0)).append("\n\t\t").append("Sets: ");
+                str1.append(c.getString(1)).append("\n\t\t").append("Reps: ");
+                str1.append(c.getString(2)).append("\n\t\t").append("Groups: ");
+                str1.append(c.getString(3));
+
+
             }
 
-            test1.setText(str1.toString());
-            test2.setText(str2.toString());
-            test3.setText(str3.toString());
-            test4.setText(str4.toString());
+
+
+            test1.setText(str1);
 
 
             c.close();

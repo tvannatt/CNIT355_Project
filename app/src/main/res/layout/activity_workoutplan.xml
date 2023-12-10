@@ -23,39 +23,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/border_format"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textTest"
-                android:layout_width="95dp"
-                android:layout_height="404dp"
-                android:padding="8dp"
-                android:textColor="@color/gold"
-                android:textSize="13sp" />
-
-            <TextView
-                android:id="@+id/textTest2"
-                android:layout_width="95dp"
+                android:layout_width="365dp"
                 android:layout_height="match_parent"
                 android:padding="8dp"
                 android:textColor="@color/gold"
                 android:textSize="13sp" />
 
-            <TextView
-                android:id="@+id/textTest3"
-                android:layout_width="95dp"
-                android:layout_height="match_parent"
-                android:padding="8dp"
-                android:textColor="@color/gold"
-                android:textSize="13sp" />
-
-            <TextView
-                android:id="@+id/textTest4"
-                android:layout_width="95dp"
-                android:layout_height="match_parent"
-                android:padding="8dp"
-                android:textColor="@color/gold"
-                android:textSize="13sp" />
         </LinearLayout>
     </ScrollView>
 
