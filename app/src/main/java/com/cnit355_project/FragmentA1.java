@@ -1,5 +1,6 @@
 package com.cnit355_project;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -68,21 +69,14 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
 
     TextView error;
     CheckBox checkBox1, checkBox2, checkBox3, checkBox4;
-    Button buttonBack, buttonRemove, buttonInsert, buttonUpdate;
+    Button buttonBack, buttonRemove, buttonInsert, buttonUpdate, buttonWorkoutPlan;
     Cursor c;
     SqlDBHelper myHelper;
     SQLiteDatabase db;
     ImageView imageView1, imageView2, imageView3, imageView4;
 
-    EditText et1_set;
-    EditText et1_rep;
-    EditText et2_set;
-    EditText et2_rep;
-    EditText et3_set;
-    EditText et3_rep;
-    EditText et4_set;
-    EditText et4_rep;
-
+    EditText et1_set, et1_rep, et2_set, et2_rep, et3_set,  et3_rep, et4_set, et4_rep;
+    Intent mIntent;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -100,6 +94,7 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
         buttonRemove = view.findViewById(R.id.buttonRemove);
         buttonInsert = view.findViewById(R.id.buttonInsert);
         buttonUpdate  = view.findViewById(R.id.buttonUpdate);
+        buttonWorkoutPlan=view.findViewById(R.id.buttonWorkoutPlan);
         et1_set= view.findViewById(R.id.editText);
 
         et1_rep= view.findViewById(R.id.editText2);
@@ -123,6 +118,7 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
         buttonInsert.setOnClickListener(this);
         buttonRemove.setOnClickListener(this);
         buttonUpdate.setOnClickListener(this);
+        buttonWorkoutPlan.setOnClickListener(this);
 
         et1_rep.setOnClickListener(this);
         et1_set.setOnClickListener(this);
@@ -158,9 +154,10 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
 
         // TODO: Replace the "create" button with a "remove" button since the database gets created automatically. Remove button will remove exercises from workoutplan.
         else if (v.getId() == R.id.buttonRemove) {
-            Log.i("FragA1", "BenchPress Deleted");
             if (checkBox1.isChecked()) {
                 myHelper.deleteData("Bench Press");
+                Log.i("FragA1", "BenchPress Deleted");
+
             } else {
                 Log.i("FragA1", "BenchPress Doesn't Exist");
 
@@ -197,13 +194,13 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
                     Log.i("FragA1", "BenchPress Already Added");
 
                     error.append("\t\t\nBench Press already added to Workout Plan. ");
-                } else
+                } else {
                     myHelper.insertData("Bench Press", et1_set.getText().toString(), et1_rep.getText().toString(), "A1");
-                Log.i("FragA1", "BenchPress inserted");
+                    Log.i("FragA1", "BenchPress inserted");
 
 
-                c.close();
-
+                    c.close();
+                }
 
             }
             if (checkBox2.isChecked()) {
@@ -211,20 +208,22 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
                     Log.i("FragA1", "Cable Chest Fly Already Added");
 
                     error.append("\t\t\nCable Chest Fly already added to Workout Plan.");
-                } else
-                    myHelper.insertData("Cable Chest Fly",  et2_set.getText().toString(), et2_rep.getText().toString(), "A1");
-                Log.i("FragA1", "Cable Chest Fly Inserted");
+                } else {
+                    myHelper.insertData("Cable Chest Fly", et2_set.getText().toString(), et2_rep.getText().toString(), "A1");
+                    Log.i("FragA1", "Cable Chest Fly Inserted");
 
-                c.close();
+                    c.close();
+                }
             }
             if (checkBox3.isChecked()) {
                 if (checkIfAlreadyAdded("Machine Chest Press")) {
                     error.append("\t\t\nMachine Chest Press already added to Workout Plan.");
 
-                } else
+                } else {
                     myHelper.insertData("Machine Chest Press", et3_set.getText().toString(), et3_rep.getText().toString(), "A1");
 
-                c.close();
+                    c.close();
+                }
             }
             if (checkBox4.isChecked()) {
                 if (checkIfAlreadyAdded("Chest Dip")) {
@@ -246,40 +245,47 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
 
         //OnUpdate
         else if (v.getId() == R.id.buttonUpdate) {
-        }
+            if (checkBox1.isChecked()) {
 
-        if (checkBox1.isChecked()) {
+                if (checkIfAlreadyAdded("Bench Press")) {
+                    if (et1_set.getText() != null || et1_rep.getText() != null) {
+                        myHelper.updateData("Bench Press", et1_set.getText().toString(), et1_rep.getText().toString());
+                    }
+                }
+            }
+            else if (checkBox2.isChecked()) {
 
-            if (checkIfAlreadyAdded("Bench Press")) {
-                if (et1_set.getText() != null || et1_rep.getText() != null) {
-                    myHelper.updateData("Bench Press", et1_set.getText().toString(), et1_rep.getText().toString());
+                if (checkIfAlreadyAdded("Cable Chest Fly")) {
+                    if (et2_set.getText() != null || et2_rep.getText() != null) {
+                        myHelper.updateData("Cable Chest Fly",  et2_set.getText().toString(), et2_rep.getText().toString());
+                    }
+
+                }
+            } else if (checkBox3.isChecked()) {
+
+                if (checkIfAlreadyAdded("Machine Chest Press")) {
+                    if (et3_set.getText() != null || et3_rep.getText() != null) {
+                        myHelper.updateData("Machine Chest Press",  et3_set.getText().toString(), et3_rep.getText().toString());
+                    }
+                }
+            }
+            else if (checkBox4.isChecked()) {
+
+                if (checkIfAlreadyAdded("Chest Dip")) {
+                    if (et4_set.getText() != null || et4_rep.getText() != null) {
+                        myHelper.updateData("Chest Dip",  et4_set.getText().toString(), et4_rep.getText().toString());
+                    }
                 }
             }
         }
-        else if (checkBox2.isChecked()) {
 
-            if (checkIfAlreadyAdded("Cable Chest Fly")) {
-                if (et2_set.getText() != null || et2_rep.getText() != null) {
-                    myHelper.updateData("Cable Chest Fly",  et2_set.getText().toString(), et2_rep.getText().toString());
-                }
 
-            }
-        } else if (checkBox3.isChecked()) {
+        else if (v.getId() == R.id.buttonWorkoutPlan) {
 
-            if (checkIfAlreadyAdded("Machine Chest Press")) {
-                if (et3_set.getText() != null || et3_rep.getText() != null) {
-                    myHelper.updateData("Machine Chest Press",  et3_set.getText().toString(), et3_rep.getText().toString());
-                }
-            }
+             mIntent = new Intent(v.getContext(), WorkoutPlanActivity.class);
+            startActivity(mIntent);
+            Log.i("Log", "Intent to WorkoutPlan Started");
         }
-        else if (checkBox4.isChecked()) {
-
-            if (checkIfAlreadyAdded("Chest Dip")) {
-                if (et4_set.getText() != null || et4_rep.getText() != null) {
-                    myHelper.updateData("Chest Dip",  et4_set.getText().toString(), et4_rep.getText().toString());
-                }
-            }}
-
 
     }
 
@@ -296,9 +302,6 @@ public class FragmentA1 extends Fragment implements View.OnClickListener {
         }
     }
 }
-
-
-
 
 
 
