@@ -22,6 +22,9 @@ OR If on mobile device:
 * Application is targeted to run on Android 13, API level 33 for best performance.
 * Application is **compatible** with Android versions 7 (API 24) and newer. Mobile device **MUST** run a minimum of Android 7 API 24 or else the application will not function.
 
+## Other Technical Information
+* RecMate app does contain some accessibility issues and other memory inefficiency issues that the team is aware of. However, many of the memory issue at the time of submission will have been ironed out, and all accessibility issues are on the roadmap.
+
 ## Licensing Information
 * As app is not currently available for public use, licensing informaiton is unavailable.
 
