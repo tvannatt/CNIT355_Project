@@ -14,10 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class WorkoutPlanActivity extends AppCompatActivity {
 
-
-    //TODO: I'm thinking of adding the ability to update the exercises from this activity as well, just to fill some of the space.
-    // I'm not really sure how to design this tbh.
-
+    //Initializations
     TextView test1;
     SqlDBHelper myHelper;
     SQLiteDatabase db;
@@ -29,39 +26,45 @@ public class WorkoutPlanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workoutplan);
-
+        // Initialize database helper
         myHelper = new SqlDBHelper(this);
 
+        // Initialize UI components
         test1 = findViewById(R.id.textTest);
         sc1 = findViewById(R.id.scrollView2);
 
-
-
+        // Load workout plan data on activity creation
         onLoad();
 
     }
-
+    // Method called when "Clear" button is clicked
     public void onWPClick(View v) {
         clearScrollView();
         Toast.makeText(this, "Cleared!", Toast.LENGTH_SHORT).show();
     }
 
+    // Method to clear the ScrollView and delete all data from the database
     private void clearScrollView() {
         test1.setText("");
         db = myHelper.getWritableDatabase();
         db.execSQL("DELETE FROM workoutplan");
     }
 
+    // Method called when "Equipment" button is clicked, starts Equipment_MainActivity
     public void onEquipClick(View v) {
         Intent mIntent = new Intent(v.getContext(), Equipment_MainActivity.class);
         startActivity(mIntent);
         Log.i("Log", "Intent to Equipment_MainActivity Started");
     }
+
+    // Method called when "Home" button is clicked, starts MainActivity
     public void onHomeClick(View v) {
         Intent mIntent = new Intent(v.getContext(), MainActivity.class);
         startActivity(mIntent);
         Log.i("Log", "Intent to MainActivity Started");
     }
+
+    // Method to load workout plan data from the database and display it in the ScrollView
     public void onLoad()
     {
         try {
@@ -71,6 +74,7 @@ public class WorkoutPlanActivity extends AppCompatActivity {
 
 
             str1 = new StringBuilder(0);
+            // Iterate through the cursor
 
             while (c.moveToNext())
             {
@@ -83,12 +87,10 @@ public class WorkoutPlanActivity extends AppCompatActivity {
 
 
             }
-
-
-
+            // Display the formatted workout plan data in the TextView
             test1.setText(str1);
 
-
+            // Close the cursor and database
             c.close();
             db.close();
             Toast.makeText(getApplicationContext(), "Query Made", Toast.LENGTH_SHORT).show();

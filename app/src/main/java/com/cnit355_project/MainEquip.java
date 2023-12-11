@@ -29,11 +29,16 @@ public class MainEquip extends Fragment implements View.OnClickListener {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    // Initialize Database helper and SQLiteDatabase
     SqlDBHelper helper;
     SQLiteDatabase db;
     String DATABASE_NAME="Workout_plan.db";
 
+    // Flag
     Boolean databaseCreated;
+
+    // Default constructor
     public MainEquip() {
         // Required empty public constructor
     }
@@ -60,6 +65,7 @@ public class MainEquip extends Fragment implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         helper = new SqlDBHelper(getActivity());
+        // Open or create the database
 
         try {
             db = getActivity().openOrCreateDatabase(
@@ -78,11 +84,7 @@ public class MainEquip extends Fragment implements View.OnClickListener {
         }
     }
 
-
-
-
-
-
+    // Initialize TextViews, Buttons, & Fragmenht for equipment selection
 
     TextView textView1;
     TextView textView2;
@@ -114,6 +116,7 @@ public class MainEquip extends Fragment implements View.OnClickListener {
         textView8 = view.findViewById(R.id.TextView8);
         button = view.findViewById(R.id.button3);
 
+        // Set click listeners for equipment selection
         textView1.setOnClickListener(this);
         textView2.setOnClickListener(this);
         textView3.setOnClickListener(this);
@@ -132,6 +135,9 @@ public class MainEquip extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         Log.i("OnCLick Triggered", "---+_++++=-----");
+
+        // Handle button click to finish the activity
+
         if (v.getId() == R.id.button3)
         {
            getActivity().finish();

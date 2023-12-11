@@ -24,10 +24,11 @@ import com.bumptech.glide.Glide;
 public class FragmentB3 extends Fragment implements View.OnClickListener {
 
 
-
+    // Database helper and cursor
     SqlDBHelper myHelper;
     SQLiteDatabase db;
     Cursor c;
+    // UI components
     CheckBox checkBox1, checkBox2, checkBox3, checkBox4;
     Button buttonBack, buttonRemove,buttonInsert, buttonUpdate, buttonWorkoutPlan;
     View view;
@@ -45,8 +46,6 @@ public class FragmentB3 extends Fragment implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
-
 
 
     @Override
@@ -94,6 +93,8 @@ public class FragmentB3 extends Fragment implements View.OnClickListener {
 
 
         error = view.findViewById(R.id.textError);
+
+        // Load images using Glide
         ImageView imageView1= (ImageView) view.findViewById(R.id.imageView1);
         ImageView imageView2= (ImageView) view.findViewById(R.id.imageView2);
         ImageView imageView3= (ImageView) view.findViewById(R.id.imageView3);
@@ -103,7 +104,6 @@ public class FragmentB3 extends Fragment implements View.OnClickListener {
         Glide.with(getActivity()).load(R.drawable.wrist_curl_up).into(imageView2);
         Glide.with(getActivity()).load(R.drawable.wrist_roller).into(imageView3);
         Glide.with(getActivity()).load(R.drawable.straight_bar_wrist_roll_up).into(imageView4);
-
 
         return view;
     }
@@ -115,8 +115,7 @@ public class FragmentB3 extends Fragment implements View.OnClickListener {
         if (v.getId() == R.id.buttonBack1) {
             getActivity().getSupportFragmentManager().popBackStackImmediate();
         }
-
-        // TODO: Replace the "create" button with a "remove" button since the database gets created automatically. Remove button will remove exercises from workoutplan.
+        //Check if remove button pressed and removes selected workout
         else if (v.getId() == R.id.buttonRemove) {
             if (checkBox1.isChecked()) {
                 myHelper.deleteData("Rickshaw Carry");
@@ -150,7 +149,7 @@ public class FragmentB3 extends Fragment implements View.OnClickListener {
             Toast.makeText(getActivity(), "Removed selections from Workout Plan.", Toast.LENGTH_SHORT).show();
         }
 
-
+        //Check if insert button pressed and insert selected workout
         else if (v.getId() == R.id.buttonInsert)
         {
             if (checkBox1.isChecked()) {
@@ -202,7 +201,7 @@ public class FragmentB3 extends Fragment implements View.OnClickListener {
                 }
             }
         }
-        //OnUpdate
+        //Check if update button pressed and update selected workout
         else if (v.getId() == R.id.buttonUpdate) {
             if (checkBox1.isChecked()) {
 
@@ -240,7 +239,7 @@ public class FragmentB3 extends Fragment implements View.OnClickListener {
 
 
         }
-
+        //Check if Workout Plan button pressed and goes to Workout Plan Activity
         else if (v.getId() == R.id.buttonWorkoutPlan) {
 
             Intent mIntent = new Intent(v.getContext(), WorkoutPlanActivity.class);
@@ -248,6 +247,7 @@ public class FragmentB3 extends Fragment implements View.OnClickListener {
             Log.i("Log", "Intent to WorkoutPlan Started");
         }
     }
+    // Method to check if an exercise is already added to the workout plan
     public boolean checkIfAlreadyAdded(String name) {
         db = myHelper.getReadableDatabase();
         c = db.rawQuery("SELECT eName FROM workoutplan WHERE eName =?", new String[]{name});

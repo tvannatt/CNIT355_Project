@@ -42,7 +42,6 @@ public class FragmentD1 extends Fragment implements View.OnClickListener {
         checkBox4 = view.findViewById(R.id.checkBox4);
         buttonBack = view.findViewById(R.id.buttonBack1);
 
-
         // Set click listeners for the checkboxes
         checkBox1.setOnClickListener(this);
         checkBox2.setOnClickListener(this);
@@ -50,9 +49,6 @@ public class FragmentD1 extends Fragment implements View.OnClickListener {
         checkBox4.setOnClickListener(this);
 
         buttonBack.setOnClickListener(this);
-
-
-
 
         return view;
     }
@@ -70,6 +66,7 @@ public class FragmentD1 extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v)
     {
+        // Handle click events for checkboxes and the "Back" button
 
         if (v.getId() == R.id.checkBox1)
         {

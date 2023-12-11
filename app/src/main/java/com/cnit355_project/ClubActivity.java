@@ -22,11 +22,12 @@ public class ClubActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_club);
 
+        // Initialize progress bar and load BoilerLink
         progress = findViewById(R.id.progressBar);
         progress.setIndeterminate(true);
         LoadLink();
 
-
+        // Set up WebViewClient for handling page loading events
         boilerLinkView.setWebViewClient(new WebViewClient()
         {
             @Override
@@ -39,14 +40,11 @@ public class ClubActivity extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
+                // Hide progress bar and enable WebView interaction after page load
                 progress.setVisibility(View.GONE);
                 boilerLinkView.setClickable(true);
             }
         });
-
-
-
-
 
 
     }
@@ -54,6 +52,7 @@ public class ClubActivity extends AppCompatActivity {
     @SuppressLint("SetJavaScriptEnabled")
     private void LoadLink()
     {
+        // Load BoilerLink into the WebView
         boilerLinkView = findViewById(R.id.webView);
         WebSettings webSettings = boilerLinkView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -67,25 +66,20 @@ public class ClubActivity extends AppCompatActivity {
 
     public void onClubClick(View v)
     {
+        // Finish the activity when the "Back to Home" button is clicked
         finish();
     }
-
+    // Reload the WebView content when the "Refresh" button is clicked
     public void onClickRefresh(View v)
     {
         boilerLinkView.reload();
         Toast.makeText(this, "Refreshed!", Toast.LENGTH_SHORT).show();
     }
-
+    // Reset the WebView to the initial page when the "Reset" button is clicked
     public void onClickReset (View v)
     {
         boilerLinkView.loadUrl("https://boilerlink.purdue.edu/organizations?categories=1450&categories=1461");
         Toast.makeText(this, "Returning to front page...", Toast.LENGTH_SHORT).show();
     }
-
-
-
-
-
-
 
 }

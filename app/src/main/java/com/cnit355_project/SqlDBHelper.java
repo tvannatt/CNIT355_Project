@@ -10,16 +10,17 @@ public class SqlDBHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
 
-    // Simple DB helper to allow universal access to the database.
-
+    // Constructor to initialize the SQLiteOpenHelper
     public SqlDBHelper(Context context)
     {
         super(context, "RecMate", null, DATABASE_VERSION);
     }
-String table_name="workoutplan";
+
+    // Define the table name
+    String table_name="workoutplan";
 
 
-
+    // Method to create the database table
     @Override
     public void onCreate(SQLiteDatabase db) {
 
@@ -27,13 +28,14 @@ String table_name="workoutplan";
         Log.i("Table Created", "DB Table");
     }
 
+    // Method to handle database upgrades
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS workoutplan");
         onCreate(db);
 
     }
-
+    // Method to insert data into the database table
     public void insertData(String name, String sets, String reps, String group)
     {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -46,7 +48,7 @@ String table_name="workoutplan";
         db.close();
     }
 
-
+    // Method to update data in the database table
     public void updateData(String name, String sets, String reps)
     {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -58,7 +60,7 @@ String table_name="workoutplan";
         Log.i("DPHELP: update s: ", sets + "r " + reps);
     }
 
-
+    // Method to delete data from the database table
     public void deleteData (String name)
     {
         SQLiteDatabase db = this.getWritableDatabase();

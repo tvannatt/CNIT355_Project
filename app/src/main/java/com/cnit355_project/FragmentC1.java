@@ -32,11 +32,12 @@ public class FragmentC1 extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
 
     }
-
+    // Database helper and cursor
 
     SqlDBHelper myHelper;
     SQLiteDatabase db;
     Cursor c;
+    // UI components
     CheckBox checkBox1, checkBox2, checkBox3, checkBox4;
     Button buttonBack, buttonRemove,buttonInsert, buttonUpdate, buttonWorkoutPlan;
     View view;
@@ -90,6 +91,7 @@ public class FragmentC1 extends Fragment implements View.OnClickListener {
         buttonWorkoutPlan.setOnClickListener(this);
         buttonUpdate.setOnClickListener(this);
 
+        // Load images using Glide
         ImageView imageView1= (ImageView) view.findViewById(R.id.imageView1);
         ImageView imageView2= (ImageView) view.findViewById(R.id.imageView2);
         ImageView imageView3= (ImageView) view.findViewById(R.id.imageView3);
@@ -100,8 +102,6 @@ public class FragmentC1 extends Fragment implements View.OnClickListener {
         Glide.with(getActivity()).load(R.drawable.singlelegpress).into(imageView3);
         Glide.with(getActivity()).load(R.drawable.tireflip).into(imageView4);
 
-
-
         return view;
     }
 
@@ -110,10 +110,11 @@ public class FragmentC1 extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        //Check if back button pressed
         if (v.getId() == R.id.buttonBack1) {
             getActivity().getSupportFragmentManager().popBackStackImmediate();
         }
-
+        //Check if remove button pressed and removes selected workout
          else if (v.getId() == R.id.buttonRemove) {
             if (checkBox1.isChecked()) {
                 myHelper.deleteData("Barbell Squat Box");
@@ -146,7 +147,7 @@ public class FragmentC1 extends Fragment implements View.OnClickListener {
             Toast.makeText(getActivity(), "Removed selections from Workout Plan.", Toast.LENGTH_SHORT).show();
         }
 
-
+        //Check if insert button pressed and insert selected workout
         else if (v.getId() == R.id.buttonInsert)
         {
             if (checkBox1.isChecked()) {
@@ -201,7 +202,8 @@ public class FragmentC1 extends Fragment implements View.OnClickListener {
                 c.close();
             }
         }
-        //OnUpdate
+        //Check if update button pressed and update selected workout
+
         else if (v.getId() == R.id.buttonUpdate) {
             if (checkBox1.isChecked()) {
 
@@ -238,6 +240,7 @@ public class FragmentC1 extends Fragment implements View.OnClickListener {
 
 
         }
+        //Check if Workout Plan button pressed and goes to Workout Plan Activity
 
         else if (v.getId() == R.id.buttonWorkoutPlan) {
 
@@ -246,6 +249,7 @@ public class FragmentC1 extends Fragment implements View.OnClickListener {
             Log.i("Log", "Intent to WorkoutPlan Started");
         }
     }
+    // Method to check if an exercise is already added to the workout plan
     public boolean checkIfAlreadyAdded(String name) {
         db = myHelper.getReadableDatabase();
         c = db.rawQuery("SELECT eName FROM workoutplan WHERE eName =?", new String[]{name});
@@ -256,8 +260,5 @@ public class FragmentC1 extends Fragment implements View.OnClickListener {
             return false;
         }
     }
-
-
-
 
 }
