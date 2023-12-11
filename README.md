@@ -5,7 +5,9 @@
 
 Either:
 * Open project file in Android Studio.
+
 OR If on mobile device:
+
 1. Navigate to 'Apps' > 'Settings' > 'Security' and enable "Unknown Sources"
 2. Download APK to local device.
 3. Navigate to APK file > tap on APK file > and confirm app installation.
