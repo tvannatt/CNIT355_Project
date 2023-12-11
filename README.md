@@ -28,4 +28,13 @@ OR If on mobile device:
 ## Developer Contact Information
 * Nebey Gebreslassie
 * * EMAIL: ngebresl@purdue.edu
-  
+* Martin Kim
+* * EMAIL: kim3540@purdue.edu
+* Trevor Vannatta
+* * EMAIL: tvannatt@purdue.edu
+
+
+ ### ACKNOWLEDGEMENTS
+ * Purdue University CNIT 355
+ * Dr. Byung-Cheol Min
+
