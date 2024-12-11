@@ -1,4 +1,4 @@
-# CNIT355_Project
+# Welcome to RecMate: Club Interface and Exercise Planner for Purdue University!
 =================================================
 
 ## Install Instructions
